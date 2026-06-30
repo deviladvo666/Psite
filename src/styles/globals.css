@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-neutral-950 text-neutral-100 antialiased;
+}
+
+/* logical spacing helpers for RTL/LTR */
+.space-inline-start { margin-inline-start: 1rem; }
+.space-inline-end { margin-inline-end: 1rem; }

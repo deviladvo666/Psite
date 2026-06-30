@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "demo": "Request Demo"
+  },
+  "hero": {
+    "title": "Build your digital future",
+    "subtitle": "Premium design, cinematic animations and scalable architecture",
+    "cta": "Request a Demo"
+  },
+  "demoForm": {
+    "title": "Request a demo",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company (optional)",
+    "message": "Your message",
+    "submit": "Submit request",
+    "success": "Your request has been submitted successfully"
+  }
+}
