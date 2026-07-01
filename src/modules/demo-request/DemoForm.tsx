@@ -1,7 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import Button from '@/components/ui/Button';
 import { useTranslations, useLocale } from 'next-intl';
+import { submitDemoRequest } from './actions';
 
 export default function DemoForm() {
   const t = useTranslations('demoForm');
@@ -19,12 +20,11 @@ export default function DemoForm() {
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
     try {
-      const res = await fetch('/api/demo', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...payload, locale })
-      });
-      if (!res.ok) throw new Error(await res.text());
+      const result = await submitDemoRequest({ ...payload, locale });
+      if (!result.ok) {
+        const first = Object.values(result.errors)[0] as string | undefined;
+        throw new Error(first || 'Validation failed');
+      }
       setSuccess(t('success'));
       form.reset();
     } catch (err: any) {
