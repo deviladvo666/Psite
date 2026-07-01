@@ -10,7 +10,15 @@ export default function Header() {
   const locale = useLocale();
   const pathname = usePathname();
   const switchLocale = locale === 'fa' ? 'en' : 'fa';
-  const switchHref = `/${switchLocale}`;
+  const switchHref = (() => {
+    if (!pathname) return `/${switchLocale}`;
+    const parts = pathname.split('/');
+    if (parts.length > 1) {
+      parts[1] = switchLocale;
+      return parts.join('/') || `/${switchLocale}`;
+    }
+    return `/${switchLocale}`;
+  })();
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-800/60 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">

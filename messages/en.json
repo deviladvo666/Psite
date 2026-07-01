@@ -9,6 +9,12 @@
     "subtitle": "Premium design, cinematic animations and scalable architecture",
     "cta": "Request a Demo"
   },
+  "products": {
+    "title": "Products",
+    "subtitle": "A curated selection of digital products.",
+    "itemTitle": "Product {index}",
+    "itemDesc": "Short description of product {index}."
+  },
   "demoForm": {
     "title": "Request a demo",
     "name": "Name",
@@ -19,3 +25,4 @@
     "success": "Your request has been submitted successfully"
   }
 }
+
